@@ -86,6 +86,7 @@ body{
 
     .contacts{
      font-style: normal;
+     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .contacts-info{
@@ -287,7 +288,8 @@ body{
         justify-content: center;
         transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
       }
-      .section-team-photo-social-links:hover, .section-team-photo-social-links:focus{
+      .section-team-photo-social-links:hover, 
+      .section-team-photo-social-links:focus{
         background-color: #404bbf;
       }
 
