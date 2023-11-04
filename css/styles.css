@@ -22,9 +22,6 @@ body{
     display: block;
     }
 
-    button:hover, button:focus{
-    background-color: #404BBF;
-    }
     .container { 
       max-width: 1158px;
       margin: 0 auto;
@@ -162,6 +159,10 @@ body{
         min-width: 169px;
         display: block;
         transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .section-main-button:focus, .section-main-button:hover{
+        background-color: var(--ocean, #404BBF);
       }
 
       /* SECTION BENEFITS */
@@ -453,4 +454,61 @@ body{
       }
       .footer-logo-box{
         margin-right: 120px
+      }
+
+      /* Backdrop styles */
+      .backdrop is-open{
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 999999;
+        width: 100%;
+        height: 100%;
+        background-color: rgb(0,0,0,0.7);
+
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: opacity 250ms linear, visibility 250ms linear;
+      }
+
+      .backdrop.is-open{
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+      }
+
+      .modal{
+        position: absolute;
+        top: 80px;
+        left: 516px;
+        width: 408px;
+        min-height: 584px;
+        background-color: #FFFFFF;
+        border-radius: 4px;
+      }
+
+      .modal-close-btn{
+        position: absolute;
+        top: 24px;
+        right: 24px;
+        width: 24px;
+        height: 24px;
+        background-color: linear-gradient(0deg, #E7E9FC, #E7E9FC),
+        linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 50%;
+        padding: 0;
+        line-height: 0;
+        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .modal-close-btn-icon{
+        stroke:rgba(46, 47, 66, 1);
+      }
+
+      .modal-close-btn:hover, 
+      .modal-close-btn:focus{
+        background-color: rgba(64, 75, 191, 1);
+        fill: rgba(255, 255, 255, 1);
       }
